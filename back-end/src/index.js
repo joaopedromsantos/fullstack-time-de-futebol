@@ -80,7 +80,7 @@ fastify.delete("/delete/:id", async (request, reply) => {
 
 
 // Iniciando servidor
-fastify.listen({ port: (process.env.PORT || 3000) }, function (error, address){
+fastify.listen({ port: process.env.PORT }, function (error, address){
     if(error){
         console.log(error);
         process.exit(1);
