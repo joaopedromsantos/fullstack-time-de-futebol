@@ -24,7 +24,7 @@ fastify.get("/get/:id", async (request, reply) => {
 });
 
 // Get list
-fastify.get("/listar", async (request, reply) => {
+fastify.get("/", async (request, reply) => {
     try {
         const result = await fastify.pg.query("SELECT * FROM times");
         return result.rows;
@@ -80,7 +80,7 @@ fastify.delete("/delete/:id", async (request, reply) => {
 
 
 // Iniciando servidor
-fastify.listen({ port: process.env.PORT }, function (error, address){
+fastify.listen({ port: process.env.PORT || 3000 }, function (error, address){
     if(error){
         console.log(error);
         process.exit(1);
