@@ -18,7 +18,8 @@ fastify.register(cors, {
     "Accept",
     "Content-type",
     "Authorization",
-  ]
+  ],
+  methods: ["GET", "PUT", "PATCH", "POST", "DELETE"],
 })
 
 // Conexão com o banco
