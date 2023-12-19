@@ -1,3 +1,7 @@
+const dotenv = require('dotenv');
+
+dotenv.config();
+
 // variaveis necessárias
 const Fastify = require("fastify");
 const fastify = Fastify({
@@ -6,9 +10,8 @@ const fastify = Fastify({
 
 // Conexão com o banco
 fastify.register(require('@fastify/postgres'), {
-    connectionString: 'postgresql://postgres:2AG-3bgDE3A21G6BD2gF363Eecfbgc36@viaduct.proxy.rlwy.net:18070/railway'
-  })
-
+    connectionString: process.env.DATABASE_URL
+});
 
 // Get id
 fastify.get("/get/:id", async (request, reply) => {
@@ -78,11 +81,14 @@ fastify.delete("/delete/:id", async (request, reply) => {
     }
 });
 
-
-// Iniciando servidor
-fastify.listen({ port: process.env.PORT || 3000 }, function (error, address){
-    if(error){
-        console.log(error);
-        process.exit(1);
+const start = async () => {
+    try {
+      await fastify.listen({ port: process.env.PORT, host: '0.0.0.0' });
+      console.log(`Server started successfully on port ${process.env.PORT}!`);
+    } catch (err) {
+      console.error(err);
+      process.exit(1);
     }
-}) 
+  };
+  
+  start();
