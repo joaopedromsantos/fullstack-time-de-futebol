@@ -1,0 +1,40 @@
+#nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5.5rem;
+    padding: 1.2rem 2.4rem;
+    background-color: #036564;
+    min-width: 768px;
+}
+
+#logo {
+    object-fit: contain;
+}
+
+#links {
+    width: 40rem;
+    max-width: 460px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.8rem;
+    
+}
+
+#imagem {
+    object-fit: contain;
+    width: 130%;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 0.12em;
+}
+
+.divider {
+    width: 2px;
+    height: 1em;
+    background-color: #CDB380;
+    border: none;
+}

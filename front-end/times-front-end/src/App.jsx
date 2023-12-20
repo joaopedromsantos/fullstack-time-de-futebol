@@ -7,9 +7,7 @@ function App() {
 
   return (
       <div className='App'>
-        <Navbar>
-          <h1>Times</h1>
-        </Navbar>
+        <Navbar />
         <Outlet />
       </div>
   )

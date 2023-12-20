@@ -1,0 +1,42 @@
+#card {
+    padding: 3%;
+    margin: auto 15%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+    background-color: #E0E0DE;
+    border-radius: 13px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#div_imagem{
+    width: 35%;
+    height: auto;
+}
+
+#imagem_chuteira{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#parte_escrita{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #036564;
+}
+
+h3 {
+    font-size: 6vw;
+
+}
+
+h1 {
+    font-size: 8vw;
+}
