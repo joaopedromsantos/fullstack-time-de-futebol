@@ -1,31 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import Tabela from '../components/Tabela'
 
-function List() {
-  const [times, setTimes] = useState([]);
-
-  const getTimes = async (url) => {
-    const res = await fetch(url);
-    const data = await res.json();
-
-    setTimes(data)
-    console.log(JSON.stringify(data))
-  }
-
-  useEffect(() => {
-    getTimes("https://fullstack-time-de-futebol-production.up.railway.app/")
-  }, []);
-
+const List = () => {
   return (
-    <div>
-      {times.map(time => (
-        <div key={time.id}>
-          <h2>{time.nome}</h2>
-          <p>Número de jogadores: {time.n_jogadores}</p>
-          <p>Valor do clube: {time.valor_clube}</p>
-        </div>
-      ))}
-    </div>
-  );
+    <Tabela />
+  )
 }
 
 export default List;

@@ -1,0 +1,37 @@
+/* Tabela.css */
+
+.customTableHead {
+    background-color: #036564; /* Substitua com a cor desejada */
+    color: red !important;; /* Cor do texto no cabeçalho */
+
+  }
+  
+  #table_config {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #f9f9f9;
+    border-radius: 13px;
+  }
+
+  #text_table {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .customTable {
+    width: 100%;
+  }
+
+  p {
+    margin-top: 1%;
+    font-size: 4vw;
+  }
+
+  #container_table {
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 4%;
+    border-radius: 13px;
+  }
