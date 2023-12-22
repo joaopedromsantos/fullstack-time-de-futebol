@@ -53,11 +53,11 @@ fastify.get("/", async (request, reply) => {
 // Post
 fastify.post("/criar", async (request, reply) => {
     try {
-        const { id, nome, n_jogadores, valor_clube } = request.body;
+        const { nome, n_jogadores, valor_clube } = request.body;
 
         const result = await fastify.pg.query(
-            "INSERT INTO times (id, nome, n_jogadores, valor_clube) VALUES ($1, $2, $3, $4)",
-            [id, nome, n_jogadores, valor_clube]
+            "INSERT INTO times (nome, n_jogadores, valor_clube) VALUES ($1, $2, $3)",
+            [nome, n_jogadores, valor_clube]
         );
 
         return result.rows;
@@ -65,6 +65,7 @@ fastify.post("/criar", async (request, reply) => {
         reply.status(500).send(error.message);
     }
 });
+
 
 // Edit
 fastify.put("/edit/:id", async (request, reply) => {
