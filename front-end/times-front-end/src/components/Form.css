@@ -1,0 +1,23 @@
+#card2 {
+    padding: 3%;
+    margin: auto 15%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    background-color: #E0E0DE;
+    border-radius: 13px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#create_p {
+    color: #036564;
+    margin-top: 0%;
+}
+
+#text_table_create {
+    display: flex;
+    justify-content: center;
+}
