@@ -4,7 +4,7 @@ import './Card_home.css'
 
 const Card_home = () => {
   return (
-    <div id='card'>
+    <div id='card_home'>
       <div id='div_imagem'>
         <img src={ Imagem } alt="Logo" id='imagem_chuteira' />
       </div>

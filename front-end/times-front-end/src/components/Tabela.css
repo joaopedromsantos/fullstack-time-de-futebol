@@ -10,7 +10,6 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: #f9f9f9;
     border-radius: 13px;
   }
 
@@ -26,7 +25,8 @@
 
   p {
     margin-top: 1%;
-    font-size: 4vw;
+    font-size: 5rem;
+    color: #036564;
   }
 
   #container_table {
@@ -35,3 +35,30 @@
     margin-bottom: 4%;
     border-radius: 13px;
   }
+
+  #card {
+    padding: 3%;
+    margin: auto 15%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: #E0E0DE;
+    border-radius: 13px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 768px) {
+  #card {
+    margin: 25px;
+    margin-top: 40px;
+  }
+
+  p {
+    margin-top: 1%;
+    font-size: 15vw;
+    color: #036564;
+  }
+
+}

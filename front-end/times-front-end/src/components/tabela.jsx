@@ -7,10 +7,22 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import CircularProgress from '@mui/material/CircularProgress'; // Importe o componente CircularProgress
+import TablePagination from '@mui/material/TablePagination';
 
 function Tabela() {
   const [times, setTimes] = useState([]);
   const [loading, setLoading] = useState(true); // Adicione um estado para rastrear o carregamento
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(5);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
 
   const getTimes = async (url) => {
     const res = await fetch(url);
@@ -34,8 +46,8 @@ function Tabela() {
         <div id='container_table'>
         {loading ? (
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-          <CircularProgress />
-        </div>
+            <CircularProgress />
+          </div>
          ) : (
             <TableContainer sx={{ borderRadius: 2,  color: 'primary.main' }}>
               <Table>
@@ -48,7 +60,7 @@ function Tabela() {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {times.map(time => (
+                  {times.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(time => (
                     <TableRow key={time.id}>
                       <TableCell>{time.id}</TableCell>
                       <TableCell>{time.nome}</TableCell>
@@ -58,6 +70,15 @@ function Tabela() {
                   ))}
                 </TableBody>
               </Table>
+              <TablePagination
+                rowsPerPageOptions={[5, 10, 25]}
+                component="div"
+                count={times.length}
+                rowsPerPage={rowsPerPage}
+                page={page}
+                onPageChange={handleChangePage}
+                onRowsPerPageChange={handleChangeRowsPerPage}
+              />
             </TableContainer>
           )}
         </div>

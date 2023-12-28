@@ -15,9 +15,30 @@
 #create_p {
     color: #036564;
     margin-top: 0%;
+    font-size: 5rem;
 }
 
 #text_table_create {
     display: flex;
     justify-content: center;
+}
+
+.Toastify__toast-body {
+    font-size: 35px; /* Altere para o tamanho de fonte desejado */
+  }
+@media screen and (max-width: 768px) {
+
+    #card2 {
+        margin: 25px;
+        margin-top: 40px;
+    }
+    #create_p {
+        color: #036564;
+        margin-top: 0%;
+        font-size: 15vw;
+    }
+
+    .Toastify__toast-body {
+        font-size: 30px; /* Altere para o tamanho de fonte desejado */
+      }
 }
